@@ -1,0 +1,21 @@
+<app-loading *ngIf="loading"></app-loading>
+
+<div *ngIf="error" class="alert alert-danger animated fadeIn">
+    <h3>
+        Error
+    </h3>
+    <p>
+        {{mensajeError}}
+    </p>
+
+</div>
+
+
+<div class="card-columns m-5 animated fadeIn">
+    <div (click)=verPlaylistCategories(categ) class="card puntero " *ngFor=" let categ of categorias let i index">
+        <img class="card-img-top" [src]="categ.icons | noimage" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{categ.name}} </h5>
+        </div>
+    </div>
+</div>
